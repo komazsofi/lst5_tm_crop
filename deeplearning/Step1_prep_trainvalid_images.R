@@ -104,6 +104,8 @@ create_subsets <- function(inputraster, targetsize, fixed = TRUE, targetdir, tar
 }
 
 create_subsets("O:/Nat_Sustain-proj/_user/ZsofiaKoma_au700510/Landsat_crop/landsat5_tm_trial/LTM5_ndvi_coll.tif", c(500,500), fixed = TRUE, "O:/Nat_Sustain-proj/_user/ZsofiaKoma_au700510/Landsat_crop/landsat5_tm_trial/split_15km/", targetformat = ".tif")
-create_subsets("O:/Nat_Sustain-proj/_user/ZsofiaKoma_au700510/Landsat_crop/landsat5_tm_trial/split_15km/img_01.tif", c(34,34), fixed = TRUE, "O:/Nat_Sustain-proj/_user/ZsofiaKoma_au700510/Landsat_crop/landsat5_tm_trial/split_trial/", targetformat = ".tif")
+
+create_subsets("O:/Nat_Sustain-proj/_user/ZsofiaKoma_au700510/Landsat_crop/landsat5_tm_trial/split_15km/img_31.tif", c(34,34), fixed = TRUE, "O:/Nat_Sustain-proj/_user/ZsofiaKoma_au700510/Landsat_crop/landsat5_tm_trial/split_trial/img/", targetformat = ".tif")
+create_subsets("O:/Nat_Sustain-proj/_user/ZsofiaKoma_au700510/Landsat_crop/landsat5_tm_trial/split_15km/img_31_mask.tif", c(34,34), fixed = TRUE, "O:/Nat_Sustain-proj/_user/ZsofiaKoma_au700510/Landsat_crop/landsat5_tm_trial/split_trial/mask/", targetformat = ".tif")
 
 

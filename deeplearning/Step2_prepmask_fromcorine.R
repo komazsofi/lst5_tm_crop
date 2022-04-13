@@ -5,14 +5,14 @@ workingdirectory="O:/Nat_Sustain-proj/_user/ZsofiaKoma_au700510/Landsat_crop/lan
 setwd(workingdirectory)
 
 corine_file_1990="O:/Nat_Sustain-proj/_user/ZsofiaKoma_au700510/Landsat_crop/field_data/corine_1990_epgs25832.shp"
-smallstudyarea_file="O:/Nat_Sustain-proj/_user/ZsofiaKoma_au700510/Landsat_crop/landsat5_tm_trial/split_15km/img_01.tif"
+smallstudyarea_file="O:/Nat_Sustain-proj/_user/ZsofiaKoma_au700510/Landsat_crop/landsat5_tm_trial/split_15km/img_31.tif"
 
 # Import & clip to extent
 
 corine=vect(corine_file_1990)
 smallstudyarea=rast(smallstudyarea_file)
 
-corine_crop=crop(corine, smallstudyarea)
+corine_crop=terra:::crop(corine, smallstudyarea)
 
 # Create mask (only agriculture 1 others are 0)
 
@@ -21,8 +21,8 @@ corine_crop[corine_crop$code_90==211] <- 1
 
 # Rasterize
 
-corine_crop_rasterized <- rasterize(corine_crop, smallstudyarea,field="code_90",fun=max)
+corine_crop_rasterized <- terra:::rasterize(corine_crop, smallstudyarea,field="code_90",fun=max)
 
 # Export
-writeRaster(corine_crop_rasterized,"O:/Nat_Sustain-proj/_user/ZsofiaKoma_au700510/Landsat_crop/landsat5_tm_trial/split_15km/img_01_mask.tif")
+terra:::writeRaster(corine_crop_rasterized,"O:/Nat_Sustain-proj/_user/ZsofiaKoma_au700510/Landsat_crop/landsat5_tm_trial/split_15km/img_31_mask.tif")
   
