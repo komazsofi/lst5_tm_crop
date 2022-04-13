@@ -71,35 +71,35 @@ create_subsets <- function(inputraster, targetsize, fixed = TRUE, targetdir, tar
                   filename = paste0(targetdir,"img_", zeros, i, targetformat),
                   overwrite = TRUE)
     }
-  }
+    #}
   
   # rename files to fill gaps left by skipped tiles
-  if(fixed == TRUE){
+  #if(fixed == TRUE){
     # save current working directory and switch to targetdir to circumvent writing errors
-    current_dir <- getwd()
-    setwd(targetdir)
+  #current_dir <- getwd()
+  #setwd(targetdir)
     
     # get number of tiles generated previously
-    n_tiles <- length(list.files(".", pattern = "*.tif"))
+  #n_tiles <- length(list.files(".", pattern = "*.tif"))
     
     # build vector of old file names (with gaps)
-    old_files <- list.files(".", pattern = "*.tif", full.names = TRUE)
+  #old_files <- list.files(".", pattern = "*.tif", full.names = TRUE)
     
     # initiate vector of new file names (no gaps)
-    new_files <- vector(length = n_tiles)
+  #new_files <- vector(length = n_tiles)
     
     # fill vector with new file names
-    for(i in 1:n_tiles){
-      lead <- (nchar(n_tiles) - nchar(i))
-      zeros <- paste(replicate(lead, "0"), collapse = "")
-      new_files[i] <- paste0("img_", zeros, i, targetformat)
-    }
+  #for(i in 1:n_tiles){
+  #lead <- (nchar(n_tiles) - nchar(i))
+  #zeros <- paste(replicate(lead, "0"), collapse = "")
+  #new_files[i] <- paste0("img_", zeros, i, targetformat)
+  #}
     
     # rename files
-    file.rename(from = old_files, to = new_files)
+  #file.rename(from = old_files, to = new_files)
     
     # reset working directory
-    setwd(current_dir)
+  #setwd(current_dir)
   }
 }
 
