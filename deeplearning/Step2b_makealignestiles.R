@@ -16,6 +16,6 @@ studyarea_mask=rast(studyarea_file_mask)
 
 # Make tiles
 
-studyarea_300m <- aggregate(studyarea, fact=50)
+studyarea_300m <- aggregate(studyarea, fact=112)
 studyarea_300m_tiles <- makeTiles(studyarea, studyarea_300m)
 studyarea_300m_tiles_mask <- makeTiles(studyarea_mask, studyarea_300m)
