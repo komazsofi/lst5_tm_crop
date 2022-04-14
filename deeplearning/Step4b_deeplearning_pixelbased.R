@@ -52,8 +52,8 @@ unet_model <- keras_model(inputs = input_tensor, outputs = unet_tensor)
 
 #get paths 
 files <- data.frame(
-  img = list.files("O:/Nat_Sustain-proj/_user/ZsofiaKoma_au700510/Landsat_crop/landsat5_tm_trial2/deeplearning_trial2/img/jpg/", full.names = TRUE, pattern = "*.jpg"),
-  mask = list.files("O:/Nat_Sustain-proj/_user/ZsofiaKoma_au700510/Landsat_crop/landsat5_tm_trial2/deeplearning_trial2/mask/jpg/", full.names = TRUE, pattern = "*.jpg")
+  img = list.files("O:/Nat_Sustain-proj/_user/ZsofiaKoma_au700510/Landsat_crop/landsat5_tm_trial3/img/jpg/", full.names = TRUE, pattern = "*.jpg"),
+  mask = list.files("O:/Nat_Sustain-proj/_user/ZsofiaKoma_au700510/Landsat_crop/landsat5_tm_trial3/mask/jpg/", full.names = TRUE, pattern = "*.jpg")
 )
 
 # split the data into training and validation datasets. 
